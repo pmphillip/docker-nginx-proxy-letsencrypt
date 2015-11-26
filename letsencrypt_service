@@ -19,17 +19,19 @@ update_certs() {
         email_varname="LETSENCRYPT_${cid}_EMAIL"
 
         for domain in "${!hosts_array}"; do
-
             # Create the domain directory
             mkdir -p /etc/nginx/certs/$domain
             cd /etc/nginx/certs/$domain
 
-            /usr/local/bin/simp_le \
+            /usr/local/bin/letsencrypt \
+             --agree-tos \
+             --text \
              -d "$domain" \
-             -f fullchain.pem -f key.pem \
              --email "${!email_varname}" \
-             --server=https://acme-v01.api.letsencrypt.org/directory \
-             --default_root /usr/share/nginx/html/
+             --server https://acme-v01.api.letsencrypt.org/directory \
+             --webroot \
+             --webroot-path /usr/share/nginx/html/ \
+             certonly
 
             simp_le_return=$?
 

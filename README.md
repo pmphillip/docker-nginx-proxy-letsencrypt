@@ -1,5 +1,7 @@
 ![nginx 1.9.6](https://img.shields.io/badge/nginx-1.9.6-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg) [![Build](https://circleci.com/gh/dmp1ce/nginx-proxy-letsencrypt.svg?&style=shield&circle-token=cd873b9ebad6424218c4dee8e8e2344366920dde)](https://circleci.com/gh/dmp1ce/nginx-proxy-letsencrypt) [![](https://badge.imagelayers.io/dmp1ce/nginx-proxy-letsencrypt:latest.svg)](https://imagelayers.io/?images=dmp1ce/nginx-proxy-letsencrypt:latest 'Get your own badge on imagelayers.io')
 
+## This repository is DEPRECATED. Please use the new dedicated container [JrCs/letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion).
+
 nginx-proxy sets up a container running nginx and [docker-gen][1].  docker-gen generates reverse proxy configs for nginx and reloads nginx when containers are started and stopped.
 
 See [Automated Nginx Reverse Proxy for Docker][2] for why you might want to use this.
